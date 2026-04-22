@@ -4,7 +4,8 @@ import customtkinter as ctk
 import pandas as pd
 print("sua calculadora de consultoria")
 # pode ser falta de experiencia, mas acho bem necessario utilizar o Try...
-try:
+while True:
+  try:
     Qual_servico = input ("qual produto você quer?")
     if Qual_servico == "1":
         print("Planilhas, custa R$100,00")
@@ -27,6 +28,10 @@ try:
             print("Valor incompleto")
         else:
             print("Ultrapassou o valor")
+#teste de break a seguir.
+    elif Qual_servico == "0":
+        print("encerrando o programa")
+        break
 #A estrutura do segundo produto, quase um Ctrl C + Ctrl V da outra, a próxima vou usar a mesma sequencia
     elif Qual_servico == "3":
         print("Limpeza de dados, custa R$50,00")
@@ -40,7 +45,7 @@ try:
             print("Ultrapassou o valor")
     else: 
         print("Resposta incorreta, tentar novamente")
-except ValueError:
+  except ValueError:
    print("eroooou")
         
 #                       Abaixo um esboço que fiz antes sobre o que juntar na linha de código    
