@@ -2,12 +2,10 @@
 # um teste para entender melhor o if, else e elif
 import customtkinter as ctk
 import pandas as pd
-janela = ctk.CTk()
-janela.title("calculadora de consultoria")
-janela.geometry("600x400")
 print("sua calculadora de consultoria")
 # pode ser falta de experiencia, mas acho bem necessario utilizar o Try...
-try:
+while True:
+  try:
     print(''' Trabalhamos com os seguintes produtos:
     1 - Planilhas = R$100,00
     2 - Automação web = R$200,00
@@ -40,6 +38,10 @@ try:
             print("Valor incompleto")
         else:
             print("Ultrapassou o valor")
+#teste de break a seguir.
+    elif Qual_servico == "0":
+        print("encerrando o programa")
+        break
 #A estrutura do segundo produto, quase um Ctrl C + Ctrl V da outra, a próxima vou usar a mesma sequencia
     elif Qual_servico == "3":
         print("Limpeza de dados, custa R$50,00")
@@ -55,9 +57,9 @@ try:
             print("Ultrapassou o valor")
     else: 
         print("Resposta incorreta, tentar novamente")
-except ValueError:
-        print("Resposta falhou, tente novamente")
-janela.mainloop()      
+  except ValueError:
+   print("eroooou")
+        
 #                       Abaixo um esboço que fiz antes sobre o que juntar na linha de código    
 #    proposta = input("quanto deseja pagar?")
 #    if proposta  == "100":
