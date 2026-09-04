@@ -45,18 +45,18 @@ def processar_venda ():
             if valor_numerico == 100:
                  label_Resultado.configure(text=">>> Sucesso: Pago com êxito")
             elif valor_numerico <= 99:
-                 label_Resultado.configure(text=">>> Erro: Valor incompleto.")
+                 label_Resultado.configure(text=">>> Erro: Valor incompleto.", text_color="red")
             else:
-                 label_Resultado.configure(text=">>> Aviso: Valor acima do preço.")
+                 label_Resultado.configure(text=">>> Aviso: Valor acima do preço.", text_color="red")
 #Configuração do segundo produto
        if servico_texto == "2":
             label_Resultado.configure(text=">>> Conversor de imagem selecionado")
             if valor_numerico == 200:
                 label_Resultado.configure(text=">>> Sucesso: Pago com êxito")
             elif valor_numerico <= 199:
-                label_Resultado.configure(text=">>> Erro: Valor incompleto.")
+                label_Resultado.configure(text=">>> Erro: Valor incompleto.", text_color="red")
             else:
-                label_Resultado.configure(text=">>> Aviso: Valor acima do preço.")
+                label_Resultado.configure(text=">>> Aviso: Valor acima do preço.", text_color="red")
 #Configuração do terceiro produto
        if servico_texto == "3":
             label_Resultado.configure(text=">>> Kobra selecionado")
@@ -65,11 +65,12 @@ def processar_venda ():
                 label_Resultado.configure(text=">>> Sucesso: Pago com êxito")
                 subprocess.Popen([sys.executable, "Kobra.py"])
             elif valor_numerico <= 49:
-                label_Resultado.configure(text=">>> Erro: Valor incompleto.")
+                label_Resultado.configure(text=">>> Erro: Valor incompleto.", text_color="red")
             else:
-                label_Resultado.configure(text=">>> Aviso: Valor acima do preço.")
+                label_Resultado.configure(text=">>> Aviso: Valor acima do preço.", text_color="red")
     except ValueError:
-        label_Resultado.configure(text=">>> Aviso: ERRO!!!!.")
+        label_Resultado.configure(text=">>> Aviso: ERRO!!!!.", text_color="red")
+
 botao_confirmar = ctk.CTkButton(janela, text="Verificar Pagamento", command=processar_venda)
 botao_confirmar.pack(pady=20)
 label_Resultado.pack(pady=(30, 15))
