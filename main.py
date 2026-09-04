@@ -1,11 +1,11 @@
 # agora vou fazer uma cálculadora de consultoria
-# um teste para entender melhor o if, else e elif
+# um teste para entender melhor a criação de programas com CTK, entre outros
 import customtkinter as ctk
 import pandas as pd
-from PIL import Image
+import subprocess, sys, os
 from tkinter import Canvas as CV
-
-ctk.set_widget_scaling(1.50)
+#from Kobra import Kobra 
+ctk.set_widget_scaling(1.55)
 
 janela = ctk.CTk()
 janela.title("Calculadora de consultoria")
@@ -17,7 +17,7 @@ print("sua calculadora de consultoria")
 label_servico = ctk.CTkLabel(janela, text=(''' Trabalhamos com os seguintes produtos:
     1 - Planilhas = R$100,00
     2 - Conversor de imagem = R$200,00
-    3 - Limpeza de dados = R$50,00
+    3 - Kobra = R$50,00
      '''), justify="left")
 label_servico.pack(pady=(60, 15))
 entrada_servico = ctk.CTkEntry(janela, placeholder_text="Ex: 1")
@@ -59,9 +59,11 @@ def processar_venda ():
                 label_Resultado.configure(text=">>> Aviso: Valor acima do preço.")
 #Configuração do terceiro produto
        if servico_texto == "3":
-            label_Resultado.configure(text=">>> Limpeza de dados selecionado")
+            label_Resultado.configure(text=">>> Kobra selecionado")
             if valor_numerico == 50:
                 label_Resultado.configure(text=">>> Sucesso: Pago com êxito")
+                label_Resultado.configure(text=">>> Sucesso: Pago com êxito")
+                subprocess.Popen([sys.executable, "Kobra.py"])
             elif valor_numerico <= 49:
                 label_Resultado.configure(text=">>> Erro: Valor incompleto.")
             else:
